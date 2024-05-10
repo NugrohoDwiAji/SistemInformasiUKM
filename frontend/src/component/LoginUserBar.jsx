@@ -1,10 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+// Coponent
 import Button from './element/Button'
+
+// Icon
+import { CgClose } from "react-icons/cg";
 
 const LoginUserBar = () => {
   return (
-    <div className="w-[20.75rem] h-[33.68rem] bg-primary border border-secondary rounded-lg p-8">
+    <div className="w-[20.75rem] h-[33.68rem] bg-primary border border-secondary rounded-l-lg p-8">
+      <div className="flex justify-end -mt-3 cursor-pointer">
+      <CgClose size={32} />
+      </div>
+
       <h1 className="text-2xl font-semibold mb-20" >
         Login <br /> Untuk User
       </h1>

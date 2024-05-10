@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+// component
 import Button from "./element/Button";
+
+// icons
+import { CgClose } from "react-icons/cg";
 
 const RegistUserBar = () => {
   return (
     <div className="w-[20.75rem] h-[33.68rem] bg-primary border border-secondary rounded-lg p-8">
+       <div className="flex justify-end -mt-3 cursor-pointer">
+      <CgClose size={32} />
+      </div>
       <h1 className="text-2xl font-semibold mb-8">
         Registrasi <br /> Untuk User
       </h1>
@@ -16,8 +24,8 @@ const RegistUserBar = () => {
             </label>
             <input
               type="text"
-              name="email"
-              id="email"
+              name="namaDepan"
+              id="namaDepan"
               className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-5"
             />
             <label htmlFor="Nama Belakang" className="hover:cursor-pointer">
@@ -25,8 +33,8 @@ const RegistUserBar = () => {
             </label>
             <input
               type="text"
-              name="password"
-              id="password"
+              name="namaBelakang"
+              id="namaBelakang"
               className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-5"
             />
             <label htmlFor="email" className="hover:cursor-pointer">
