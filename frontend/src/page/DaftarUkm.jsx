@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DaftarUKM = () => {
+const DaftarUkm = () => {
   const ukmList = [
     { name: 'UKM JAMAAH AL-KAUTSAR', logo: 'Jamaah AlKuatsar.png', description: 'Lembaga kemahasiswaan yang bergerak di bidang dakwah islam', id: 1 },
     { name: 'UKM PMK GALILEA', logo: 'PMK Galilea.png', description: 'Pelayanan UKM PMK Galilea  merupakan unit kagiatan kerohanian Kristiani Galilea', id: 2 },
@@ -32,4 +32,4 @@ const DaftarUKM = () => {
 
 
 
-export default DaftarUKM;
+export default DaftarUkm;
