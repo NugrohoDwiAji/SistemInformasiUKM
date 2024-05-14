@@ -1,5 +1,5 @@
 import React from 'react';
-import DaftarUKM from './DaftarUkm';
+import DaftarUkm from './DaftarUkm';
 
 
 
