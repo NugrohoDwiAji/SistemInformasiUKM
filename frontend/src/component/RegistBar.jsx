@@ -7,14 +7,15 @@ import Button from "./element/Button";
 // icons
 import { CgClose } from "react-icons/cg";
 
-const RegistUserBar = () => {
+const RegistBar = (props) => {
+  const {hidenRegist, sethidenRegist, handleOpenLogin}=props
   return (
-    <div className="w-[20.75rem] h-[33.68rem] bg-primary border border-secondary rounded-lg p-8">
-       <div className="flex justify-end -mt-3 cursor-pointer">
+    <div className="w-[20.75rem] h-[33.68rem] bg-primary border border-secondary rounded-lg p-8" hidden={hidenRegist ? true:false}>
+       <button className="absolute right-3 top-3 cursor-pointer" onClick={sethidenRegist}>
       <CgClose size={32} />
-      </div>
+      </button>
       <h1 className="text-2xl font-semibold mb-8">
-        Registrasi <br /> Untuk User
+        Registrasi
       </h1>
       <div>
         <div>
@@ -61,11 +62,11 @@ const RegistUserBar = () => {
       </div>
       <div className="flex-col flex gap-3">
         <h1>
-          Sudah Punya Akun? <Link>Login</Link>
+          Sudah Punya Akun? <button onClick={handleOpenLogin}>Login</button>
         </h1>
       </div>
     </div>
   );
 };
 
-export default RegistUserBar;
+export default RegistBar;

@@ -8,7 +8,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="h-fit bg-primary w-screen py-7 px-16">
+    <div className="h-fit bg-primary w-screen py-7 px-16 border-y-2 border-secondary">
     <div className="flex">
       <img src="/siu.png" alt="eror" className="h-12" />
       <h1>

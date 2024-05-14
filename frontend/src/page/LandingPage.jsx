@@ -94,11 +94,10 @@ const LandingPage = () => {
         </p>
         <div className="flex gap-5 w-full snap-x overflow-auto scrollbar-hide snap-mandatory">
           {ukm.map((item) => (
-            <div className="snap-center">
+            <div className="snap-center" key={item.id}>
               <CardUkmLandingPage
                 img={item.img}
                 title={item.title}
-                key={item.id}
               />
             </div>
           ))}

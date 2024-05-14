@@ -1,6 +1,7 @@
 import React from "react";
 import CardMinat from "../component/CardMinat";
 
+
 const MinatPage = () => {
   return (
    <div className="flex flex-col items-center pt-24 bg-primary ">

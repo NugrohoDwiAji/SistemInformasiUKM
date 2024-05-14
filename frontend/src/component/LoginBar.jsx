@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 
 // Coponent
@@ -7,15 +7,17 @@ import Button from './element/Button'
 // Icon
 import { CgClose } from "react-icons/cg";
 
-const LoginUserBar = () => {
+const LoginBar = (props) => {
+const {hidenLogin, sethidenLogin, handleOpenRegist} = props
+
   return (
-    <div className="w-[20.75rem] h-[33.68rem] bg-primary border border-secondary rounded-l-lg p-8">
-      <div className="flex justify-end -mt-3 cursor-pointer">
+    <div className={`w-[20.75rem] h-[33.68rem] bg-primary border-2 border-secondary rounded-l-lg p-8`} hidden={ hidenLogin ? true : false}>
+      <button className={`absolute right-3 top-3 cursor-pointer`} onClick={sethidenLogin} >
       <CgClose size={32} />
-      </div>
+      </button>
 
       <h1 className="text-2xl font-semibold mb-20" >
-        Login <br /> Untuk User
+        Login
       </h1>
       <div>
         <div>
@@ -30,10 +32,10 @@ const LoginUserBar = () => {
       </div>
       <div className="flex-col flex gap-3">
         <Link>Lupa Kata Sandi?</Link>
-        <Link>Buat Akun</Link>
+        <button onClick={handleOpenRegist} className='text-start'>Buat Akun</button>
       </div>
     </div>
   )
 }
 
-export default LoginUserBar
+export default LoginBar
