@@ -2,10 +2,7 @@ import React from "react";
 import Button from "../component/element/Button";
 
 // component
-import LoginUserBar from "../component/LoginUserBar";
-import RegistUserBar from "../component/RegistUserBar";
 import FaqBar from "../component/FaqBar";
-import Header from "../component/Header";
 import CardUkmLandingPage from "../component/CardUkmLandingPage";
 
 const ukm = [
