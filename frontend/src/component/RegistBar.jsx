@@ -1,12 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+// component
 import Button from "./element/Button";
 
-const RegistUserBar = () => {
+// icons
+import { CgClose } from "react-icons/cg";
+
+const RegistBar = (props) => {
+  const {hidenRegist, sethidenRegist, handleOpenLogin}=props
   return (
-    <div className="w-[20.75rem] h-[33.68rem] bg-primary border border-secondary rounded-lg p-8">
+    <div className="w-[20.75rem] h-[33.68rem] bg-primary border border-secondary rounded-lg p-8" hidden={hidenRegist ? true:false}>
+       <button className="absolute right-3 top-3 cursor-pointer" onClick={sethidenRegist}>
+      <CgClose size={32} />
+      </button>
       <h1 className="text-2xl font-semibold mb-8">
-        Registrasi <br /> Untuk User
+        Registrasi
       </h1>
       <div>
         <div>
@@ -16,8 +25,8 @@ const RegistUserBar = () => {
             </label>
             <input
               type="text"
-              name="email"
-              id="email"
+              name="namaDepan"
+              id="namaDepan"
               className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-5"
             />
             <label htmlFor="Nama Belakang" className="hover:cursor-pointer">
@@ -25,8 +34,8 @@ const RegistUserBar = () => {
             </label>
             <input
               type="text"
-              name="password"
-              id="password"
+              name="namaBelakang"
+              id="namaBelakang"
               className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-5"
             />
             <label htmlFor="email" className="hover:cursor-pointer">
@@ -53,11 +62,11 @@ const RegistUserBar = () => {
       </div>
       <div className="flex-col flex gap-3">
         <h1>
-          Sudah Punya Akun? <Link>Login</Link>
+          Sudah Punya Akun? <button onClick={handleOpenLogin}>Login</button>
         </h1>
       </div>
     </div>
   );
 };
 
-export default RegistUserBar;
+export default RegistBar;
