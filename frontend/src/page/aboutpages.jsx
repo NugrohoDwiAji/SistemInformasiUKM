@@ -1,7 +1,7 @@
 import React from 'react';
 import DaftarUKM from '../page/daftarukm';
-import Header from '../component/header';
-import Footer from '../component/footer';
+import Header from '../component/Header';
+import Footer from '../component/Footer';
 
 
 const AboutPage = () => {
