@@ -10,12 +10,10 @@ const [hidenRegist, sethidenRegist] = useState(true)
   const handleOpenRegist = () => {
     sethidenLogin(true)
     sethidenRegist(false)
-  
   };
   const handleOpenLogin = () => {
     sethidenLogin(false)
     sethidenRegist(true)
-   
   }
 
   return (
