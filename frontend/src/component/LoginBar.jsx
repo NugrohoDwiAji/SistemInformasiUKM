@@ -22,10 +22,10 @@ const {hidenLogin, sethidenLogin, handleOpenRegist} = props
       <div>
         <div>
           <form action=""  className="flex flex-col">
-            <label htmlFor="email" className="hover:cursor-pointer" >Email</label>
-            <input type="email" name="email" id="email" className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-7"/>
-            <label htmlFor="password" className="hover:cursor-pointer" >Password</label>
-            <input type="password" name="password" id="password" className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-6"/>
+            <label htmlFor="email-login" className="hover:cursor-pointer" >Email</label>
+            <input type="email" name="email" id="email-login" className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-7"/>
+            <label htmlFor="password-login" className="hover:cursor-pointer" >Password</label>
+            <input type="password" name="password" id="password-login" className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-6"/>
             <Button className="mb-12">Login</Button>
           </form>
         </div>

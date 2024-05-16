@@ -1,0 +1,40 @@
+[
+    {
+      "id": 1,
+      "pertanyaan": "Apa itu UKM di kampus?",
+      "jawaban":
+        "Organisasi atau kelompok kegiatan yang dijalankan oleh mahasiswa di kampus.",
+        "className":"-rotate-12 mr-10"
+    },
+    {
+      "id": 2,
+      "pertanyaan":
+        "Mengapa harus memilih UKM yang sesuai dengan minat dan bakat saya?",
+      "jawaban":
+        " Untuk meningkatkan pengalaman kampus Anda, membantu Anda mengembangkan keterampilan yang relevan, dan memperluas jaringan sosial Anda.",
+        "className":"rotate-12 ml-10"
+    },
+    {
+      "id": 3,
+      "pertanyaan":
+        "Bagaimana cara mengetahui minat dan bakat  untuk memilih UKM yang tepat?",
+      "jawaban": "Pertimbangkan minat Anda, hobi, dan kegiatan anda",
+      "className":"col-span-2 m-auto"
+    },
+    {
+      "id": 4,
+      "pertanyaan": "Apa manfaat bergabung dengan UKM?",
+      "jawaban":
+        " Membantu Anda mengembangkan keterampilan, menemukan passion baru, memperluas jaringan sosial",
+        "className":"-rotate-12 mt-10 mr-10"
+    },
+    {
+      "id": 5,
+      "pertanyaan":
+        "Bagaimana cara memilih UKM yang sesuai dengan minat dan bakat saya?",
+      "jawaban":
+        "Telusuri berbagai UKM yang tersedia di kampus Anda, tanyakan kepada anggota yang sudah bergabung, dan cari informasi lebih lanjut tentang UKM tersebut",
+        "className":"rotate-12 mt-10 ml-10"
+    }
+]
+  

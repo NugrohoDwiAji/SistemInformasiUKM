@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "JAMA'AH AL-KAUTSAR",
+    "img": "/JAMAAH-DETAIL.png",
+    "tentang": "Unit Kegiatan Mahasiswa UKKI Jama’ah Al Kautsar merupakan lembaga kemahasiswaan yang bergerak di bidang dakwah islam . Lembaga ini adalah suatu wadah kegiatan bagi mahasiswa untuk membina dan mengembangkan bakat serta kemampuan dengan menyelenggerakan kegiatan kemahasiswaan yang didasarkan pada nilai dan syariat islam, menuju peningkatan kualitas keimanan dan diri generasi muda islam",
+    "visi": "Visi dan Misi : Membentuk intelektual Muslim yang berakhlak Islami dan profesional, dengan fokus pada pengembangan keimanan dan ketaqwaan sebagai pendukung dakwah kampus, serta melakukan pembinaan dan peningkatan kualitas anggota secara berkelanjutan."
+  },
+  {
+    "id": 2,
+    "name": "GALILEA",
+    "img": "/GALILEA-DETAIL.png",
+    "tentang": "Unit Kegiatan Mahasiswa PMK GALILEA (Persekutuan Mahaiswa Kristen GALILEA Universitas Akprind Indonesia) merupakan UKM bagi mahasiswa Kristen. Berkedudukan di Kampus 1 Universitas Akprind Indonesia. Didorong oleh keadaan yang mendesak kerinduan untuk tetap bersekutu memuliakan nama Tuhan.",
+    "visi": "Visi & Misi : Mewujudkan PKM yang berkarakter Kristus dalam kehidupan sehari-hari, menjadi berkat bagi semua orang, dan mengajak mahasiswa Kristen UAI untuk bergabung. Selain itu, PMK GALILEA juga bertujuan menanamkan rasa kekeluargaan dan kepedulian antar anggota."
+  },
+  {
+    "id": 3,
+    "name": "KMK",
+    "img": "/KMK-detail.png",
+    "tentang": "Unit Kegiatan Mahasiswa KMK (Keluarga Mahasiswa Katolik Universitas Akprind Indonesia) merupakan UKM bagi mahasiswa Kaltolik. Berkedudukan di Kampus 1 Universitas Akprind Indonesia.",
+    "visi": "Visi & Misi kami adalah menjadi agen perubahan berdasarkan ajaran Katolik, menginspirasi pertumbuhan iman dan kontribusi sosial mahasiswa, serta memperluas pemahaman akan ajaran Katolik melalui kegiatan sosial, sambil membangun komunitas inklusif bagi mahasiswa."
+  },
+  {
+    "id": 4,
+    "name": "PSM GEMA",
+    "img": "/PSM-GEMA-DETAIL.png",
+    "tentang": "Unit Kegiatan Mahasiswa PSM GEMA (Paduan Suara Mahasiswa “GEMA”) merupakan salah satu UKM yang ada di Universitas Akprind Indonesia, awal terbentuknya UKM PSM ini dimulai dari ide-ide serta gagasan pembentukan yang mulainya hanyalah Kumpulan dari beberapa mahasisa yang gemar bernyanyi atau seni suara.",
+    "visi": "Nama PSM IST AKPRIND mulai dikenal  dan diakui keberadaannya oleh institut sekitar tahun 1997. Pada tahun 1997, nama PSM ISTA adalah “Gemma”, dengan maksud agar makna dari nama tersebut lebih dalam. Dengan demikian, namanya adalah Unit Kegiatan Mahasiswa Paduan Suara “GEMA” sebagai nama PSM IST Akprind."
+  },
+  {
+    "id": 5,
+    "name": "MAPALISTA",
+    "img": "/MAPALISTA-DETAIL.png",
+    "tentang": "MAPALISTA (Mahasiswa pecinta alam Universitas Akprind Indonesia) merupakan UKM bagi mahasiswa pecinta alam. Berkedudukan di Kampus 1 Universitas Akprind Indonesia. MAPALISTA didirikan di kampus pada tanggal  2 November  1988 dengan peresmiannya di puncak gunung Merbabu ( Jawa Tengah).",
+    "visi": "Visi & Misi: Membimbing anggota untuk memperkuat cinta tanah air melalui kegiatan kepecintaan alam, serta lebih mengenal, melindungi, dan melestarikan kekayaan serta potensi tanah air. Kami juga turut serta dalam melestarikan alam dan lingkungan, serta membantu pemerintah dalam upaya tersebut."
+  },
+  {
+    "id": 6,
+    "name": "PENALA",
+    "img": "/PENALA-DETAIL.png",
+    "tentang": "Unit Kegiatan Mahasiswa PENALA (Penalaran dan Penelitian) Universitas Akprind Indonesia. UKM PENALA bertempat dikampus 1 Universitas Akprind Indonesia yang didirikan pada tanggal 23 September 2017. UKM PENALA berasaskan kebenaran (riset) dan ilmu pengetahuan, penelitian dan pengabdian.",
+    "visi": "Visi & Misi : menciptakan mahasiswa yang berpikir kritis, kreatif, dan inovatif melalui karya tulis ilmiah untuk kemajuan bangsa. Misi kami adalah memfasilitasi peningkatan daya kritis, kreatif, dan inovatif mahasiswa serta menumbuhkan pola pikir ilmiah di kalangan mereka."
+  }
+]

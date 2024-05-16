@@ -1,0 +1,44 @@
+[
+  {
+    "link":"/detailUkm/1",
+    "name": "UKM JAMAAH AL-KAUTSAR",
+    "logo": "Jamaah AlKuatsar.png",
+    "description": "Lembaga kemahasiswaan yang bergerak di bidang dakwah islam",
+    "id": 1
+  },
+  {
+    "link":"/detailUkm/2",
+    "name": "UKM PMK GALILEA",
+    "logo": "PMK Galilea.png",
+    "description": "Pelayanan UKM PMK Galilea  merupakan unit kagiatan kerohanian Kristiani Galilea",
+    "id": 2
+  },
+  {
+    "link":"/detailUkm/3",
+    "name": "UKM KMK",
+    "logo": "KMK.png",
+    "description": "UKM KMK (Keluarga Mahasiswa Katolik) merupakan unit kegiatan kerohanian katolik",
+    "id": 3
+  },
+  {
+    "link":"/detailUkm/4",
+    "name": "UKM PSM GEMA",
+    "logo": "PSM Gema.png",
+    "description": "UKM PSM GEMA merupakan kegiatan yang bergerak di bidang paduan suara",
+    "id": 4
+  },
+  {
+    "link":"/detailUkm/5",
+    "name": "UKM MAPALISTA",
+    "logo": "Mapala.png",
+    "description": "UKM MAPALISTA (Mahasiswa pecinta alam Universitas Akprind Indonesia) merupakan UKM bagi mahasiswa pecinta alam. ",
+    "id": 5
+  },
+  {
+    "link":"/detailUkm/6",
+    "name": "UKM PENALA",
+    "logo": "Penala.png",
+    "description": "UKM PENALA bergerak di bidang penalaran dan penelitian ",
+    "id": 6
+  }
+]
