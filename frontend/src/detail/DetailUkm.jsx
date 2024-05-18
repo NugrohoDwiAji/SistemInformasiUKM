@@ -27,12 +27,11 @@ useEffect(() => {
         <h2 className='text-2xl font-semibold mb-3'>Visi & Misi</h2>
         <p className='text-justify text-xl'>{dataUkm?.visi}</p>
         <div className='mb-40'>
-          <Button className="m-5">Daftar Sekarang</Button>
+          <Button className="mt-5 mr-5">Daftar Sekarang</Button>
           <Button>Lihat Proker</Button>
         </div>
-       
-        <img src="/BG-KMK-1.png" alt="eror" className='absolute bottom-0 right-3 ' />
-        <img src="/BG-KMK-2.png" alt="eror" className='absolute bottom-0 left-3' />
+        <img src={dataUkm?.bg1} alt="eror" className='absolute bottom-0 right-3 ' />
+        <img src={dataUkm?.bg2} alt="eror" className='absolute bottom-0 left-3' />
 
       </div>
     </div>

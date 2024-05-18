@@ -1,11 +1,11 @@
 [
-    {"id":"1", "img":"./alam.jpg","text":"Alam","value":"1"},
-    {"id":"2", "img":"./alam.jpg","text":"Alam","value":"1"},
-    {"id":"3", "img":"./alam.jpg","text":"Alam","value":"1"},
-    {"id":"4", "img":"./alam.jpg","text":"Alam","value":"1"},
-    {"id":"5", "img":"./alam.jpg","text":"Alam","value":"1"},
-    {"id":"6", "img":"./alam.jpg","text":"Alam","value":"1"},
-    {"id":"7", "img":"./alam.jpg","text":"Alam","value":"1"},
-    {"id":"8", "img":"./alam.jpg","text":"Alam","value":"1"},
-    {"id":"9", "img":"./alam.jpg","text":"Alam","value":"1"}
+    {"id":"1", "img":"./sosial.jpeg","text":"Kegiatan Sosial","value":1},
+    {"id":"2", "img":"./religi.jpg","text":"Kegiatan Religi","value":2},
+    {"id":"3", "img":"./outdor.jpg","text":"Kegiatan Berkemah","value":3},
+    {"id":"4", "img":"./menulis.jpg","text":"Kegiatan Menulis","value":4},
+    {"id":"5", "img":"./mendaki.jpg","text":"Kegiatan Mendaki","value":5},
+    {"id":"6", "img":"./membaca.jpg","text":"Kegiatan Membaca","value":6},
+    {"id":"7", "img":"./alam.jpg","text":"Kegiatan Dengan Alam","value":7},
+    {"id":"8", "img":"./bernyanyi.jpg","text":"Kegiatan Bernyanyi","value":8},
+    {"id":"9", "img":"./bermusik.webp","text":"Kegiatan Bermusik","value":9}
 ]

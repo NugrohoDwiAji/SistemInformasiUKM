@@ -3,16 +3,58 @@ import Button from "../component/element/Button";
 import { Link } from "react-router-dom";
 
 // data
-import Faq from "../data/Faq.json"
-import DaftarUkm from "../data/DaftarUkm.json"
+
+import DaftarUkm from "../data/DaftarUkm.json";
 
 // component
 import FaqBar from "../component/FaqBar";
 import CardUkmLandingPage from "../component/CardUkmLandingPage";
 
+
+
 const LandingPage = () => {
+
+  const Faq = [
+    {
+      id: 1,
+      pertanyaan: "Apa itu UKM di kampus?",
+      jawaban:
+        "Organisasi atau kelompok kegiatan yang dijalankan oleh mahasiswa di kampus.",
+      className: "-rotate-12 mr-10",
+    },
+    {
+      id: 2,
+      pertanyaan:
+        "Mengapa harus memilih UKM yang sesuai dengan minat dan bakat saya?",
+      jawaban:
+        " Untuk meningkatkan pengalaman kampus Anda, membantu Anda mengembangkan keterampilan yang relevan, dan memperluas jaringan sosial Anda.",
+      className: "rotate-12 ml-10",
+    },
+    {
+      id: 3,
+      pertanyaan:
+        "Bagaimana cara mengetahui minat dan bakat  untuk memilih UKM yang tepat?",
+      jawaban: "Pertimbangkan minat Anda, hobi, dan kegiatan anda",
+      className: "col-span-2 m-auto",
+    },
+    {
+      id: 4,
+      pertanyaan: "Apa manfaat bergabung dengan UKM?",
+      jawaban:
+        " Membantu Anda mengembangkan keterampilan, menemukan passion baru, memperluas jaringan sosial",
+      className: "-rotate-12 mt-10 mr-10",
+    },
+    {
+      id: 5,
+      pertanyaan:
+        "Bagaimana cara memilih UKM yang sesuai dengan minat dan bakat saya?",
+      jawaban:
+        "Telusuri berbagai UKM yang tersedia di kampus Anda, tanyakan kepada anggota yang sudah bergabung, dan cari informasi lebih lanjut tentang UKM tersebut",
+      className: "rotate-12 mt-10 ml-10",
+    },
+  ];
   return (
-    <div className="overflow-hidden ">
+    <div className="overflow-hidden w-screen">
       <div className="h-screen bg-primary">
         <img
           src="/doodle-left.png"
@@ -34,7 +76,17 @@ const LandingPage = () => {
               SISTEM INFORMASI <br />
               UKM
             </h1>
-            <p className="text-3xl mt-5">Temukan Bakatmu</p>
+            <h2 className="text-3xl font-semibold text-secondary mt-3">
+              UNIVERSITAS AKPRIND INDONESIA
+            </h2>
+            <p className="text-lg mt-3">
+              Dengan memilih aktivitas yang tepat, <br />
+              Kamu dapat meningkatkan kepercayaan diri, <br />
+              memperbaiki kualitas hidup, <br />
+              dan membuka peluang baru dalam karier <br />
+              dan kehidupan pribadi.
+            </p>
+            {/* <h3 className="text-xl mt-3 font-semibold">Tunggu apalagi? Tentukan pilihanmu sekarang!</h3> */}
           </div>
         </div>
       </div>
@@ -48,17 +100,14 @@ const LandingPage = () => {
         <div className="flex gap-5 w-full snap-x overflow-auto scrollbar-hide snap-mandatory">
           {DaftarUkm.map((item) => (
             <div className="snap-center" key={item.id}>
-              <CardUkmLandingPage
-                img={item.logo}
-                title={item.name}
-              />
+              <CardUkmLandingPage img={item.logo} title={item.name} />
             </div>
           ))}
         </div>
         <Link to={"/about"}>
-        <Button className="bg-secondary text-white mt-16">
-          Baca Selengkapnya
-        </Button>
+          <Button className="bg-secondary text-white mt-16">
+            Baca Selengkapnya
+          </Button>
         </Link>
       </div>
       {/* Minat Section */}
@@ -80,15 +129,22 @@ const LandingPage = () => {
           Anda di UKM
         </p>
         <Link to={"/minat"}>
-        <Button className="text-white bg-secondary ">Pilih Sekarang</Button>
+          <Button className="text-white bg-secondary ">Pilih Sekarang</Button>
         </Link>
       </div>
       {/* FAQ section */}
       <div className=" border-y border-secondary pb-28">
-        <h1 className="text-xl flex justify-center mt-10 mb-20">Frequently Asked Question</h1>
+        <h1 className="text-xl flex justify-center mt-10 mb-20">
+          Frequently Asked Question
+        </h1>
         <div className="grid grid-cols-2 w-fit gap-10 m-auto mt-10">
-          {Faq.map((item)=>(
-            <FaqBar text1={item.pertanyaan} text2={item.jawaban} className={item.className} key={item.id}/>
+          {Faq.map((item) => (
+            <FaqBar
+              text1={item.pertanyaan}
+              text2={item.jawaban}
+              className={item.className}
+              key={item.id}
+            />
           ))}
         </div>
       </div>
