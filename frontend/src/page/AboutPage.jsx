@@ -3,6 +3,7 @@ import DaftarUkm from './DaftarUkm';
 
 
 
+
 const AboutPage = () => {
   return (
     <div className="bg-primary min-h-screen w-screen">

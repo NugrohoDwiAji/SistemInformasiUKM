@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../component/element/Button";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import 'aos/dist/aos.css'
 
 // data
 
@@ -10,9 +12,8 @@ import DaftarUkm from "../data/DaftarUkm.json";
 import FaqBar from "../component/FaqBar";
 import CardUkmLandingPage from "../component/CardUkmLandingPage";
 
-
-
 const LandingPage = () => {
+
 
   const Faq = [
     {
@@ -20,7 +21,7 @@ const LandingPage = () => {
       pertanyaan: "Apa itu UKM di kampus?",
       jawaban:
         "Organisasi atau kelompok kegiatan yang dijalankan oleh mahasiswa di kampus.",
-      className: "-rotate-12 mr-10",
+      className: "md:-rotate-12 md:mr-10",
     },
     {
       id: 2,
@@ -28,7 +29,7 @@ const LandingPage = () => {
         "Mengapa harus memilih UKM yang sesuai dengan minat dan bakat saya?",
       jawaban:
         " Untuk meningkatkan pengalaman kampus Anda, membantu Anda mengembangkan keterampilan yang relevan, dan memperluas jaringan sosial Anda.",
-      className: "rotate-12 ml-10",
+      className: "md:rotate-12 md:ml-10",
     },
     {
       id: 3,
@@ -42,7 +43,7 @@ const LandingPage = () => {
       pertanyaan: "Apa manfaat bergabung dengan UKM?",
       jawaban:
         " Membantu Anda mengembangkan keterampilan, menemukan passion baru, memperluas jaringan sosial",
-      className: "-rotate-12 mt-10 mr-10",
+      className: "md:-rotate-12 md:mt-10 md:mr-10",
     },
     {
       id: 5,
@@ -50,36 +51,45 @@ const LandingPage = () => {
         "Bagaimana cara memilih UKM yang sesuai dengan minat dan bakat saya?",
       jawaban:
         "Telusuri berbagai UKM yang tersedia di kampus Anda, tanyakan kepada anggota yang sudah bergabung, dan cari informasi lebih lanjut tentang UKM tersebut",
-      className: "rotate-12 mt-10 ml-10",
+      className: "md:rotate-12 md:mt-10 md:ml-10",
     },
   ];
+
+  useEffect(() => {
+  AOS.init({
+    duration:1500,
+    once:true
+  })
+  }, [])
+  
   return (
     <div className="overflow-hidden w-screen">
-      <div className="h-screen bg-primary">
+      {/* Hero Section */}
+      <div className="h-[350px] md:h-[500px] lg:h-[650px] bg-primary relative">
         <img
           src="/doodle-left.png"
           alt="eror"
-          className="absolute left-0 -bottom-16"
+          className="absolute left-0  md:h-52 h-36 bottom-0"
         />
         <img
           src="/doodle-right.png"
           alt="eror"
-          className="absolute right-0 -bottom-32"
+          className="absolute right-0 lg:h-[350px] md:h-60 h-48 -bottom-9 lg:-bottom-14"
         />
-        <div className=" flex items-center justify-center pt-14 gap-10">
-          <img src="/hero-landingPage.png" alt="eror" />
+        <div className=" flex flex-col md:flex-row items-center justify-center md:pt-14 gap-10">
+          <img src="/hero-landingPage.png" alt="eror" className=" lg:h-[400px] md:h-56 h-32" />
           <div>
             <h1
-              className="stroke-black stroke-2 text-7xl font-bold text-primary"
+              className="stroke-black stroke-2 lg:text-7xl md:text-4xl text-xl text-center md:text-left font-bold text-primary"
               id="title"
             >
               SISTEM INFORMASI <br />
               UKM
             </h1>
-            <h2 className="text-3xl font-semibold text-secondary mt-3">
+            <h2 className="lg:text-3xl md:text-lg text-xs text-center md:text-left font-semibold text-secondary mt-3">
               UNIVERSITAS AKPRIND INDONESIA
             </h2>
-            <p className="text-lg mt-3">
+            <p className="lg:text-lg md:text-base hidden md:block text-xs mt-3">
               Dengan memilih aktivitas yang tepat, <br />
               Kamu dapat meningkatkan kepercayaan diri, <br />
               memperbaiki kualitas hidup, <br />
@@ -91,39 +101,41 @@ const LandingPage = () => {
         </div>
       </div>
       {/* UKM Section */}
-      <div className="h-screen border-y border-secondary p-5 flex items-center flex-col">
-        <p className="text-3xl text-center my-4">
+      <div className="h-[450px] md:h-[540px] lg:h-[650px] border-y border-secondary md:p-5 p-2 flex items-center flex-col">
+        <p className="lg:text-3xl md:text-lg text-xs text-center my-4">
           UKM merupakan klub ekstrakurikuler yang berfungsi sebagai <br /> wadah
           mahasiswa untuk mempelajari dan mengeksplor <br /> banyak hal baru
           serta meningkatkan kemampuan dalam <br /> bidang yang diinginkan.
         </p>
         <div className="flex gap-5 w-full snap-x overflow-auto scrollbar-hide snap-mandatory">
           {DaftarUkm.map((item) => (
-            <div className="snap-center" key={item.id}>
+            <div className="snap-center" key={item.id} data-aos="flip-right">
               <CardUkmLandingPage img={item.logo} title={item.name} />
             </div>
           ))}
         </div>
         <Link to={"/about"}>
-          <Button className="bg-secondary text-white mt-16">
+          <Button className="bg-secondary text-white mt-8">
             Baca Selengkapnya
           </Button>
         </Link>
       </div>
       {/* Minat Section */}
-      <div className="bg-primary px-5 py-10 flex flex-col items-center gap-5 relative">
+      <div className="md:h-80 h-64 lg:h-fit  bg-primary lg:px-5 md:px-3 px-2 lg:py-10 md:py-5 py-3 flex flex-col items-center gap-5 relative">
         <img
+        data-aos="fade-left"
           src="/doodle-minat-left.png"
           alt="eror"
-          className="absolute left-0 -bottom-12"
+          className="absolute left-0 lg:h-80 md:h-60 h-40  lg:-bottom-12 md:-bottom-8 -bottom-6"
         />
         <img
+        data-aos="fade-right"
           src="/doodle-minat-right.png"
           alt="eror"
-          className="absolute z-10 right-0 -bottom-11"
+          className="absolute lg:h-80 md:h-60 h-40 z-10 right-0 lg:-bottom-11 md:-bottom-8 -bottom-5"
         />
-        <h1 className="text-2xl">Minat Dan Bakat</h1>
-        <p className="text-5xl text-center font-bold italic leading-relaxed">
+        <h1 className="lg:text-2xl md:text-xl text-lg">Minat Dan Bakat</h1>
+        <p className="lg:text-5xl  md:text-3xl text-xl text-center font-bold italic lg:leading-relaxed md:leading-normal">
           Ayo mulai jelajahi potensi Anda <br />
           sekarang dan temukan tempat <br />
           Anda di UKM
@@ -133,12 +145,13 @@ const LandingPage = () => {
         </Link>
       </div>
       {/* FAQ section */}
-      <div className=" border-y border-secondary pb-28">
-        <h1 className="text-xl flex justify-center mt-10 mb-20">
+      <div className=" border-y border-secondary md:pb-28 pb-10">
+        <h1 className="text-xl flex justify-center mt-10 md:mb-20 ">
           Frequently Asked Question
         </h1>
-        <div className="grid grid-cols-2 w-fit gap-10 m-auto mt-10">
+        <div className="grid grid-cols-2 w-fit md:gap-10 gap-3 m-auto md:mt-10 mt-5 ">
           {Faq.map((item) => (
+            
             <FaqBar
               text1={item.pertanyaan}
               text2={item.jawaban}

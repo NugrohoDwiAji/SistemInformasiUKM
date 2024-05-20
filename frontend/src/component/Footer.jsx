@@ -8,7 +8,7 @@ import { FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="h-fit bg-primary w-screen py-7 px-16 border-y-2 border-secondary">
+    <div className="h-fit bg-primary w-screen py-7 md:px-16 px-5 border-y-2 border-secondary">
     <div className="flex">
       <img src="/siu.png" alt="eror" className="h-12" />
       <h1>
@@ -17,8 +17,8 @@ const Footer = () => {
       </h1>
     </div>
     <hr className="h-[2px] my-3 w-full bg-secondary border-none" />
-    <div className="flex justify-between mt-10 mb-5">
-      <p className="tex-sm">
+    <div className="flex flex-col md:flex-row  justify-between md:mt-10 mt-5 md:mb-5">
+      <p className="tex-sm mb-3 md:mb-0">
         Sistem Informasi UKM @ 2024. All rights reserved.
       </p>
       <div className=" flex gap-4">

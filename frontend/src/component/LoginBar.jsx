@@ -8,7 +8,7 @@ import Button from './element/Button'
 import { CgClose } from "react-icons/cg";
 
 const LoginBar = (props) => {
-const {hidenLogin, sethidenLogin, handleOpenRegist} = props
+const {hidenLogin, sethidenLogin, handleOpenRegist, setLogin } = props
 
   return (
     <div className={`w-[20.75rem] h-[33.68rem] bg-primary border-2 border-secondary rounded-l-lg p-8`} hidden={ hidenLogin ? true : false}>
@@ -26,7 +26,7 @@ const {hidenLogin, sethidenLogin, handleOpenRegist} = props
             <input type="email" name="email" id="email-login" className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-7"/>
             <label htmlFor="password-login" className="hover:cursor-pointer" >Password</label>
             <input type="password" name="password" id="password-login" className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-6"/>
-            <Button className="mb-12">Login</Button>
+            <Button className="mb-12" type="button" onClick={setLogin}>Login</Button>
           </form>
         </div>
       </div>
