@@ -15,11 +15,13 @@ const DaftarUkm = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-primary p-4">
       {ukmList.map((ukm) => (
         <div key={ukm.id} className="border border-black rounded-md p-4 shadow-md bg-white relative">
-          <img src={`/public/${ukm.logo}`} alt={ukm.name} className="w-24 h-24 rounded-full mx-auto mb-4" />
-          <h3 className="text-sm md:text-base font-semibold mb-2">{ukm.name}</h3>
+          <img src={`/${ukm.logo}`} alt={ukm.name} className="w-24 h-24 rounded-full mx-auto mb-4" />
+          <h3 className="text-sm md:text-base font-semibold mb-2 font-lexend">{ukm.name}</h3>
           <p className="text-xs mb-12">{ukm.description}</p>
-          <Link to={ukm.link} className="hover:bg-primary text-black font-bold text-xs py-1 px-2 md:py-2 md:px-4 rounded border border-black absolute bottom-4 right-4">
+          <Link to={ukm.link} className="hover:bg-primary text-black font-bold text-xs h-fit w-fit  rounded border border-black absolute bottom-4 right-4 hover:scale-105">
+            <div className='relative border border-secondary py-1 px-2 md:py-2 md:px-4 rounded -top-1 -left-1 bg-white hover:bg-primary'>
             Lihat Selengkapnya
+            </div>
           </Link>
         </div>
       ))}

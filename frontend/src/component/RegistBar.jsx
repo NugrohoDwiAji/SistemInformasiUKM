@@ -56,11 +56,11 @@ const RegistBar = (props) => {
               id="password"
               className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-6"
             />
-            <Button className="mb-7">Buat Akun</Button>
+            <Button className="bg-primary">Buat Akun</Button>
           </form>
         </div>
       </div>
-      <div className="flex-col flex gap-3">
+      <div className="flex-col flex gap-3 mt-7">
         <h1>
           Sudah Punya Akun? <button onClick={handleOpenLogin}>Login</button>
         </h1>

@@ -7,13 +7,14 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        "pitch":["Pitch Sans"],
+        "lexend":["Lexend"],
         "sans":["Montserrat", "sans-serif"]
 
       },
       colors:{
         "primary":"#FFE845",
-        "secondary" : "#2B2929"
+        "secondary" : "#131212",
+        "black": "#131212"
       },
     },
   },

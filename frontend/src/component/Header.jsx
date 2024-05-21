@@ -32,34 +32,34 @@ const Header = () => {
 
   return (
     <div className="h-16">
-      <div className=" fixed top-0 right-0 left-0 bg-primary flex justify-between items-center h-16 py-2 border-b-2 border-secondary z-50 px-2">
+      <div className=" fixed top-0 right-0 left-0 bg-primary flex justify-between items-center h-16 py-2 border-b-2 border-secondary z-50 px-2 md:px-5">
         <div>
           <NavLink to={"/"} className={"md:hidden"}>
             <img src="/siu.png" alt="" className="h-7" />
           </NavLink>
         </div>
         <div className="flex gap-16 items-center md:text-base text-sm">
-          <NavLink to={"/about"}>Informasi</NavLink>
+          <NavLink to={"/about "} className={"hover:scale-105 hover:font-semibold "}>Informasi</NavLink>
           <NavLink to={"/"} className={"hidden md:block"}>
             <img src="/siu.png" alt="" className="md:h-12 h-7" />
           </NavLink>
-          <NavLink to={"/minat"}>Minat</NavLink>
+          <NavLink to={"/minat"} className={"hover:scale-105 hover:font-semibold "}>Minat</NavLink>
         </div>
         <div>
-          <Button
+          <button
             type="buton"
             onClick={() => sethidenLogin(false)}
-            className={`border-none text-lg ${login ? "hidden" : ""} `}
+            className={`border-none text-lg hover:scale-105 hover:font-semibold  ${login ? "hidden" : ""} `}
           >
             Login
-          </Button>
-          <Button
+          </button>
+          <button
             type="buton"
             onClick={() => setprofil(true)}
-            className={`border-none text-lg ${login ? " " : "hidden"} `}
+            className={`border-none text-lg hover:scale-105 ${login ? " " : "hidden"} `}
           >
             Hi Irene
-          </Button>
+          </button>
 
           <div className="absolute top-0 right-0">
             <ProfilBar

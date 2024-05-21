@@ -323,7 +323,7 @@ useEffect(() => {
 
   return (
     <div className="flex flex-col items-center lg:pt-24 md:pt-16 md:px-5 px-2 pt-5 bg-primary w-screen ">
-      <h1 className="lg:text-5xl md:text-3xl text-base font-bold md:border-4 border-2 border-dashed md:p-5 p-3 border-secondary rounded-xl ">
+      <h1 className="lg:text-5xl md:text-3xl text-base text-secondary font-bold md:border-4 border-2 border-dashed md:p-5 p-3 border-secondary rounded-xl ">
         PILIH TOPIK YANG KAMU SUKA
       </h1>
       <h2 className="lg:my-10 md:my-5 my-3 lg:text-2xl md:text-xl">Tentukan Minat Dan Bakatmu</h2>
@@ -343,7 +343,9 @@ useEffect(() => {
           </div>
         ))}
         {console.log()}
-        <Button  className="w-full col-start-1 col-end-4 mb-10" onClick={compare} type="button">Selesai</Button>
+        
+        <Button   onClick={compare} type="button" classNames="w-full col-start-1 col-end-4 mb-10" className="bg-primary">Selesai</Button>
+
       </form>
       <h1 className="text-start w-2/3 mb-10 lg:text-xl md:text-lg text-sm font-semibold">
         {" "}

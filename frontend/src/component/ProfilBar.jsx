@@ -107,14 +107,17 @@ const ProfilBar = ({ profil, setprofil, setLogin }) => {
           </div>
         
         </form>
-          <Button className="mb-12 mr-5" type="button" onClick={handleEditing}>
+        <div className="flex gap-5">
+
+          <Button className="bg-primary" type="button" onClick={handleEditing}>
             {isEditing ? "Edit" : "Simpan"}
           </Button>
-        <Button className="mb-12" type="button" onClick={setLogin}>
+        <Button className="bg-secondary text-primary" type="button" onClick={setLogin}>
           Log out
         </Button>
+        </div>
       </div>
-      <div className="flex-col flex gap-3"></div>
+     
     </div>
   );
 };
