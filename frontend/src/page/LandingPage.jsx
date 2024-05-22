@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../component/element/Button";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import LoginBar from "../component/LoginBar";
+import ProfilBar from "../component/ProfilBar";
+import RegistBar from "../component/RegistBar";
 
 // data
 
@@ -13,6 +16,31 @@ import FaqBar from "../component/FaqBar";
 import CardUkmLandingPage from "../component/CardUkmLandingPage";
 
 const LandingPage = () => {
+  const [hidenLogin, sethidenLogin] = useState(true);
+  const [hidenRegist, sethidenRegist] = useState(true);
+  const [profil, setprofil] = useState(false);
+  const [login, setLogin] = useState(false);
+
+
+  const handleOpenRegist = () => {
+    sethidenLogin(true);
+    sethidenRegist(false);
+  };
+  const handleOpenLogin = () => {
+    sethidenLogin(false);
+    sethidenRegist(true);
+  };
+
+  // hanya sementara
+  const handleLogin = () => {
+    setLogin(true);
+    sethidenLogin(true);
+  };
+
+  const handleLogout = () => {
+    setLogin(false);
+    setprofil(false);
+  };
   const Faq = [
     {
       id: 1,
@@ -63,19 +91,24 @@ const LandingPage = () => {
   return (
     <div className="overflow-hidden w-screen">
       {/* Hero Section */}
-      <div className="h-[350px] md:h-[500px] lg:h-[650px] bg-primary relative pt-24">
+      <div className="h-[300px] md:h-[450px] lg:h-[600px] bg-primary relative lg:pt-16 md:pt-12 pt-8 px-5">
         <img
+        data-aos="fade-right"
           src="/doodle-left.png"
           alt="eror"
-          className="absolute left-0  md:h-52 h-36 bottom-0"
+          className="absolute left-0 lg:h-72  md:h-52 h-24 bottom-0"
         />
 
-        <div className="h-fit lg:w-[800px] border-2 lg:border-r-8 lg:border-b-8 rounded-xl lg:text-xl border-secondary flex flex-col text-center bg-white lg:px-12 gap-3 lg:py-7 justify-center items-center m-auto relative ">
-          <img src="/softStar.png" alt="eror" className="absolute -top-12 -left-12" />
-            <h1 className="text-4xl font-semibold font-lexend">Sistem Informasi UKM</h1>
+        <div data-aos="fade-up" className="h-fit w-fit mb-3 md:mb-5 lg:mb-7 md:w-[600px] lg:w-[800px] border-2 lg:border-r-8 lg:border-b-8 md:border-r-[6px] md:border-b-[6px] border-r-4 border-b-4 rounded-xl text-xs md:text-base lg:text-xl border-secondary shadow-2xl flex flex-col text-center bg-white px-3 py-3 lg:px-12 gap-3 lg:py-7  m-auto relative ">
+          <img src="/softStar.png" alt="eror" className="absolute -top-7 -left-7 md:-top-12 md:-left-12 md:h-28 h-16" />
+            <h1 className=" text-lg md:text-2xl lg:text-4xl font-semibold font-lexend">Sistem Informasi UKM</h1>
             <p>Temukan Ruang untuk Mengembangkan Ide dan Bakatmu Platform Digital Inovatif yang Mendorong Kreativitas dan Kolaborasi di Kalangan Mahasiswa</p>
         </div>
-        <div className="h-fit lg:w-[550px] border-2  lg:border-l-8 lg:border-b-8 bg-white rounded-xl border-secondary shadow-2xl absolute right-6 bottom-5 lg:p-7 lg:text-xl">
+        <div className="flex gap-3 md:ml-16 lg:ml-80">
+          <Button className="bg-primary" onClick={()=>sethidenRegist(!hidenRegist)}>Daftar Sekarang</Button>
+          <Button className="bg-primary" onClick={()=>sethidenLogin(!hidenLogin)} >Login</Button>
+        </div>
+        <div data-aos="fade-left" className="h-fit w-64 md:w-80  lg:w-[550px] border-2  lg:border-l-8 lg:border-b-8 md:border-b-[6px] md:border-l-[6px] bg-white rounded-xl border-secondary shadow-2xl absolute right-6 bottom-5 lg:p-7 md:p-5 lg:text-xl md:text-sm hidden md:block ">
           <p>Selamat datang di Sistem Informasi UKM, <br /> tempat dimana semangat
           kreativitas dan kolaborasi mahasiswa bersatu. Kami menyediakan ruang
           bagi Unit Kegiatan Mahasiswa untuk berbagi ide, berkolaborasi,<br /> dan
@@ -139,6 +172,20 @@ const LandingPage = () => {
             />
           ))}
         </div>
+        <div className="absolute top-0 right-0  z-50">
+
+            <LoginBar
+              hidenLogin={hidenLogin}
+              sethidenLogin={() => sethidenLogin(true)}
+              handleOpenRegist={handleOpenRegist}
+              setLogin={handleLogin}
+            />
+            <RegistBar
+              hidenRegist={hidenRegist}
+              sethidenRegist={() => sethidenRegist(true)}
+              handleOpenLogin={handleOpenLogin}
+            />
+          </div>
       </div>
     </div>
   );
