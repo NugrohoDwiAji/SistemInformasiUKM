@@ -7,7 +7,12 @@ import Footer from './component/Footer'
 import AboutPage from './page/AboutPage'
 import DetailUkm from './detail/DetailUkm'
 
+
+
+
 export default function App() {
+
+
   return (
     <Router>
             <Header/>

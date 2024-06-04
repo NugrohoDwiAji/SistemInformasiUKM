@@ -14,6 +14,7 @@ import DaftarUkm from "../data/DaftarUkm.json";
 // component
 import FaqBar from "../component/FaqBar";
 import CardUkmLandingPage from "../component/CardUkmLandingPage";
+import { isAuthenticated } from "../services/auth.services";
 
 const LandingPage = () => {
   const [hidenLogin, sethidenLogin] = useState(true);
@@ -129,7 +130,7 @@ const LandingPage = () => {
             </div>
           ))}
         </div>
-        <Link to={"/about"}>
+        <Link to={isAuthenticated()?"/about":"/"}>
           <Button className="bg-white text-secondary">Baca Selengkapnya</Button>
         </Link>
       </div>
@@ -153,7 +154,7 @@ const LandingPage = () => {
           sekarang dan temukan tempat <br />
           Anda di UKM
         </p>
-        <Link to={"/minat"}>
+        <Link to={isAuthenticated()?"/minat":"/"}>
           <Button className="text-secondary bg-primary ">Pilih Sekarang</Button>
         </Link>
       </div>

@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Button from "./element/Button";
 import LoginBar from "./LoginBar";
 import RegistBar from "./RegistBar";
 import ProfilBar from "./ProfilBar";
+import { getUserName, isAuthenticated } from "../services/auth.services";
+
 
 const Header = () => {
   const [hidenLogin, sethidenLogin] = useState(true);
   const [hidenRegist, sethidenRegist] = useState(true);
+  const [isLogin, setisLogin] = useState(false);
   const [profil, setprofil] = useState(false);
-  const [login, setLogin] = useState(false);
+  const [nama, setnama] = useState("");
+
+
+
+  const token = localStorage.getItem("token");
+
   const handleOpenRegist = () => {
     sethidenLogin(true);
     sethidenRegist(false);
@@ -19,16 +26,14 @@ const Header = () => {
     sethidenRegist(true);
   };
 
-  // hanya sementara
-  const handleLogin = () => {
-    setLogin(true);
-    sethidenLogin(true);
-  };
+  useEffect(() => {
+    setnama(getUserName(token));
+    if (isAuthenticated()) {
+      setisLogin(true);
+    }
+  }, []);
 
-  const handleLogout = () => {
-    setLogin(false);
-    setprofil(false);
-  };
+
 
   return (
     <div className="h-16">
@@ -39,40 +44,51 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="flex gap-16 items-center md:text-base text-sm">
-          <NavLink to={"/about "} className={"hover:scale-105 hover:font-semibold "}>Informasi</NavLink>
+          <NavLink
+            to={isAuthenticated()? "/about ":"/"}
+            className={"hover:scale-105 hover:font-semibold "}
+          >
+            Informasi
+          </NavLink>
           <NavLink to={"/"} className={"hidden md:block"}>
             <img src="/siu.png" alt="" className="md:h-12 h-7" />
           </NavLink>
-          <NavLink to={"/minat"} className={"hover:scale-105 hover:font-semibold "}>Minat</NavLink>
+          <NavLink
+            to={isAuthenticated()?"/minat":"/"}
+            className={"hover:scale-105 hover:font-semibold "}
+          >
+            Minat
+          </NavLink>
         </div>
         <div>
-          <button
-            type="buton"
-            onClick={() => sethidenLogin(false)}
-            className={`border-none text-lg hover:scale-105 hover:font-semibold  ${login ? "hidden" : ""} `}
-          >
-            Login
-          </button>
-          <button
-            type="buton"
-            onClick={() => setprofil(true)}
-            className={`border-none text-lg hover:scale-105 ${login ? " " : "hidden"} `}
-          >
-            Hi Irene
-          </button>
+          {!isLogin && (
+            <button
+              type="buton"
+              onClick={() => sethidenLogin(false)}
+              className={`border-none text-lg hover:scale-105 hover:font-semibold `}
+            >
+              Login
+            </button>
+          )}
+          {isLogin && (
+            <button
+              type="buton"
+              onClick={() => setprofil(true)}
+              className={`border-none text-lg hover:scale-105 `}
+            >
+              Hi {nama}!
+            </button>
+          )}
 
           <div className="absolute top-0 right-0">
-            <ProfilBar
-              setLogin={handleLogout}
-              profil={profil}
-              setprofil={() => setprofil(false)}
-            />
+            <ProfilBar profil={profil} setprofil={() => setprofil(false)} />
+
             <LoginBar
               hidenLogin={hidenLogin}
               sethidenLogin={() => sethidenLogin(true)}
               handleOpenRegist={handleOpenRegist}
-              setLogin={handleLogin}
             />
+
             <RegistBar
               hidenRegist={hidenRegist}
               sethidenRegist={() => sethidenRegist(true)}

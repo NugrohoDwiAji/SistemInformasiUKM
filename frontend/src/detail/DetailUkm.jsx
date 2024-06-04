@@ -113,7 +113,7 @@ const DetailUkm = () => {
       </div>
       <div
         className={`flex flex-col fixed w-full items-center top-44 ease-in-out duration-300 text-green-600  ${
-          hiddenSucces ? "hidden" : "*:"
+          hiddenSucces ? "hidden" : ""
         }`}
       >
         <div className="bg-white px-7 py-2 rounded-2xl w-fit flex flex-col items-center border-4 border-primary">
