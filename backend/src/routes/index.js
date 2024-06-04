@@ -9,7 +9,7 @@ import { upload } from "../controlers/profilController.js"
 
 router.use("/signup",signupRouter)
 router.use("/login",loginRouter)
-router.use("/profil", upload,updateRouter)
+router.use("/profil", upload ,updateRouter)
 
 
 router.use("*",(req, res)=>{
