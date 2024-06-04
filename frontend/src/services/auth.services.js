@@ -3,7 +3,7 @@ import { jwtDecode } from "jwt-decode";
 
 export const login = async (data, callback) => {
   try {
-    const response = await axios
+    await axios
       .post("http://localhost:3000/login", data)
       .then((res) => {
         callback(true, res.data.datas);

@@ -15,6 +15,7 @@ const LoginBar = (props) => {
   const [password, setpassword] = useState("");
 
   const handlLogin = async () => {
+    console.log(email)
     const data = {
       email,
       password,
@@ -49,10 +50,10 @@ const LoginBar = (props) => {
               Email
             </label>
             <input
-              onChange={(e) => setemail(e.target.value)}
+              onChange={(e) =>setemail(e.target.value)}
               type="email"
               name="email"
-              id="email-login"
+              id="email"
               className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-7"
             />
             <label htmlFor="password-login" className="hover:cursor-pointer">
@@ -62,7 +63,7 @@ const LoginBar = (props) => {
               onChange={(e) => setpassword(e.target.value)}
               type="password"
               name="password"
-              id="password-login"
+              id="password"
               className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-6"
             />
             <Button className="bg-primary" type="button" onClick={handlLogin}>
