@@ -17,7 +17,7 @@ const ProfilBar = ({ profil, setprofil, setLogin }) => {
     prodi: "",
     angkatan: "",
     noTlp: "",
-    file:null
+    file : null
   });
 
 

@@ -23,10 +23,10 @@ export const upload = multer({
 }).single('file')
 
 export const profil = (req,res) => {
-  const file = req.file;
-  const url= `${req.protocol}://${req.get("host")}/img/${file.filename}`
+  const file = req.file.filename;
+  const url= `${req.protocol}://${req.get("host")}/img/${file}`
   const { email, nama, nim, prodi, angkatan, noTlp} = req.body;
-  const sql1 = `UPDATE tb_userprofil SET nama = "${nama}", nim = "${nim}", prodi = "${prodi}", angkatan="${angkatan}", noTlp = ${noTlp}, foto = "${file.filename}", url = "${url}" WHERE email = "${email}"`;
+  const sql1 = `UPDATE tb_userprofil SET nama = "${nama}", nim = "${nim}", prodi = "${prodi}", angkatan="${angkatan}", noTlp = ${noTlp}, foto = "${file}", url = "${url}" WHERE email = "${email}"`;
   const sql2 = `UPDATE tb_users SET nama = "${nama}" WHERE email = "${email}"`;
 
   db.query(sql1, (err, result) => {
