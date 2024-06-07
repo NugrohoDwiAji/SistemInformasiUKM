@@ -1,4 +1,4 @@
-const db = require('../database/connection');
+import { db } from "../../database/connection";
 
 exports.getAllKegiatan = (req, res) => {
     const sql = 'SELECT * FROM kegiatan';

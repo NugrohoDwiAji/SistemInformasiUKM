@@ -13,6 +13,7 @@ const LoginBar = (props) => {
   const { hidenLogin, sethidenLogin, handleOpenRegist, setLogin } = props;
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [erorMessege, seterorMessege] = useState("")
 
   const handlLogin = async () => {
     console.log(email)
@@ -26,6 +27,7 @@ const LoginBar = (props) => {
         window.location.reload()
       }else{
         console.log(res.response.data.message)
+        seterorMessege(res.response.data.message)
       }
     });
   };
@@ -64,9 +66,10 @@ const LoginBar = (props) => {
               type="password"
               name="password"
               id="password"
-              className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none mb-6"
+              className=" ease-in-out duration-300 bg-transparent border-b border-secondary outline-none "
             />
-            <Button className="bg-primary" type="button" onClick={handlLogin}>
+            <p className="text-red-600 text-xs mt-1">{erorMessege}</p>
+            <Button className="bg-primary" type="button" onClick={handlLogin} classNames="mt-5">
               Login
             </Button>
           </form>

@@ -35,6 +35,21 @@ export const updateProfil = async (data, callback) => {
   }
 };
 
+export const getRole = (token) => {
+  if (!token || typeof token !== "string") {
+    console.warn("Invalid or missing token");
+    return null; // Mengembalikan null jika token tidak ada, bukan string, atau tidak valid
+  }
+
+  try {
+    const decoded = jwtDecode(token);
+    return decoded.role; // Asumsikan 'userName' adalah bagian dari payload JWT
+  } catch (error) {
+    console.error("Error decoding token:", error);
+    return null; // Mengembalikan null jika terjadi kesalahan saat mendekode token
+  }
+};
+
 export const getEmail = (token) => {
   if (!token || typeof token !== "string") {
     console.warn("Invalid or missing token");

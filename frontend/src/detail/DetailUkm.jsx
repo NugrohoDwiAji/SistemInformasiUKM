@@ -6,20 +6,34 @@ import Proker from "../component/Proker";
 import { IoClose } from "react-icons/io5";
 import CardConfirm from "../component/CardConfirm";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { getRole } from "../services/auth.services";
+import { EditAdmin } from "../component/EditAdmin";
+
+const token = localStorage.getItem("token");
 
 const DetailUkm = () => {
   const [dataUkm, setdataUkm] = useState(null);
   const [hidenProker, sethidenProker] = useState(true);
   const [hiddenConfirm, sethiddenConfirm] = useState(true);
   const [hiddenSucces, sethiddenSucces] = useState(true);
+  const [isAdmin, setisAdmin] = useState("");
+  const [cantEdit, setcantEdit] = useState(true);
   const { id } = useParams();
 
   const handleSucces = () => {
-    sethiddenConfirm(true)
+    sethiddenConfirm(true);
     sethiddenSucces(false);
     setTimeout(() => {
       sethiddenSucces(true);
-    },1500);
+    }, 1500);
+  };
+
+  const handleAdmin = () => {
+    if (isAdmin === "admin") {
+      setcantEdit(false);
+    } else {
+      setcantEdit(true);
+    }
   };
 
   useEffect(() => {
@@ -29,9 +43,20 @@ const DetailUkm = () => {
     }
   }, [id]);
 
+  useEffect(() => {
+    setisAdmin(getRole(token));
+    handleAdmin();
+  }, [isAdmin]);
+
+  console.log(isAdmin);
+  console.log(cantEdit);
+
   return (
     <div className="flex flex-col lg:flex-row  bg-white">
-      <div className="lg:w-1/2 lg: p-5">
+      <div className="lg:w-1/2 lg: p-5 relative">
+      <div hidden={cantEdit} className={``}>
+          <EditAdmin />
+          </div> 
         <img
           src={dataUkm?.img}
           alt=""
@@ -45,16 +70,33 @@ const DetailUkm = () => {
         <h2 className="md:text-2xl text-base font-semibold mb-3 font-lexend">
           Tentang Kami
         </h2>
-        <p className="text-justify md:text-lg md:mb-3 mb-2">
+        <p className="text-justify lg:min-h-36 w-full md:text-lg md:mb-3 mb-2 relative">
+          <div hidden={cantEdit}>
+          <EditAdmin />
+          </div>
           {dataUkm?.tentang}
         </p>
-        <h2 className="md:text-2xl font-semibold md:mb-3 font-lexend">Visi & Misi</h2>
-        <p className="text-justify md:text-lg">{dataUkm?.visi}</p>
+        <h2 className="md:text-2xl font-semibold md:mb-3 font-lexend">
+          Visi & Misi
+        </h2>
+        <p className="text-justify md:text-lg lg:min-h-36 w-full relative">
+          <div hidden={cantEdit} className={` `}>
+          <EditAdmin />
+          </div>
+          {dataUkm?.visi}
+        </p>
         <div className="md:mb-40 mt-5 flex gap-5 mb-20">
-          <Button className="bg-primary" onClick={() => sethiddenConfirm(false)}>
+          <Button
+            className="bg-primary"
+            onClick={() => sethiddenConfirm(false)}
+          >
             Daftar Sekarang
           </Button>
-          <Button onClick={() => sethidenProker(false)} type="button" className="bg-primary">
+          <Button
+            onClick={() => sethidenProker(false)}
+            type="button"
+            className="bg-primary"
+          >
             Lihat Proker
           </Button>
         </div>
@@ -109,7 +151,10 @@ const DetailUkm = () => {
           hiddenConfirm ? "hidden" : ""
         }`}
       >
-        <CardConfirm sethiddenConfirm={() => sethiddenConfirm(true)} handleSucces={handleSucces}/>
+        <CardConfirm
+          sethiddenConfirm={() => sethiddenConfirm(true)}
+          handleSucces={handleSucces}
+        />
       </div>
       <div
         className={`flex flex-col fixed w-full items-center top-44 ease-in-out duration-300 text-green-600  ${
@@ -117,8 +162,10 @@ const DetailUkm = () => {
         }`}
       >
         <div className="bg-white px-7 py-2 rounded-2xl w-fit flex flex-col items-center border-4 border-primary">
-        <IoMdCheckmarkCircleOutline size={120} />
-        <h1 className="text-secondary   text-2xl font-semibold">Pendaftaran Berhasil!</h1>
+          <IoMdCheckmarkCircleOutline size={120} />
+          <h1 className="text-secondary   text-2xl font-semibold">
+            Pendaftaran Berhasil!
+          </h1>
         </div>
       </div>
     </div>

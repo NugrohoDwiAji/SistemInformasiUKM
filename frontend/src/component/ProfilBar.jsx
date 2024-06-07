@@ -3,6 +3,7 @@ import { CgClose } from "react-icons/cg";
 import { getDataUser, getEmail, updateProfil } from "../services/auth.services";
 import Button from "./element/Button";
 import axios from "axios";
+import { IoPersonOutline } from "react-icons/io5";
 
 const token = localStorage.getItem("token");
 
@@ -103,8 +104,8 @@ const ProfilBar = ({ profil, setprofil, setLogin }) => {
       <div className="flex justify-center">
         <img
           src={privew? privew : dataProfile.file}
-          alt={"none"}
-          className="h-28 w-28 bg-red-400 rounded-full mb-5"
+          alt={""}
+          className="h-28 w-28 border-2 border-secondary border-dashed rounded-full mb-5"
         />
       </div>
       <div>

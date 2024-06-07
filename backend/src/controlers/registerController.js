@@ -2,6 +2,7 @@ import { response } from "../components/response.js";
 import { db } from "../../database/connection.js";
 import regValid from "../validation/register.js";
 
+
 const signUp = async (req, res) => {
   const hasil = await regValid(req.body);
   const { nama, email, password } = hasil.data;
