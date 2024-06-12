@@ -7,6 +7,7 @@ const Proker = ({no,kegiatan,waktu,deskripsi}) => {
                     <td className='border-2 border-black lg:px-5 lg:py-2'>{kegiatan}</td>
                     <td className='border-2 border-black lg:px-5 lg:py-2'>{waktu}</td>
                     <td className='border-2 border-black lg:px-5 lg:py-2'>{deskripsi}</td>
+                    <td className='border-2 border-black lg:px-5 lg:py-2'>{""}</td>
                 </tr>
   )
 }

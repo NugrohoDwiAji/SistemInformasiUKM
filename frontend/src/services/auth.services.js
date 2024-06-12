@@ -13,6 +13,18 @@ export const login = async (data, callback) => {
   }
 };
 
+export const UploudSpreadSheet = async (data, callback) => {
+  try {
+    await axios
+      .post("https://script.google.com/macros/s/AKfycbz3aLTBDmjyLuUgDQqZBPgwGEYr7UvYjNcfTh7NlBPzOeZk9gp3dzHCHbLZEmZqI-rDVQ/exec", data)
+      .then((res) => {
+        callback(true, res.data.datas);
+      });
+  } catch (error) {
+    callback(false, error);
+  }
+};
+
 export const getDataUser = async (data, callback)=>{
   try {
     await axios.get(`http://localhost:3000/profil/${data}`).then((res)=> callback(res.data.datas[0]))

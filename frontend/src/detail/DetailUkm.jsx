@@ -6,8 +6,10 @@ import Proker from "../component/Proker";
 import { IoClose } from "react-icons/io5";
 import CardConfirm from "../component/CardConfirm";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import { getRole } from "../services/auth.services";
-import { EditAdmin } from "../component/EditAdmin";
+import { UploudSpreadSheet, getEmail, getRole } from "../services/auth.services";
+import TextareaAutoSize from "react-textarea-autosize";
+import { getDataUser } from "../services/auth.services";
+import axios from "axios";
 
 const token = localStorage.getItem("token");
 
@@ -18,6 +20,16 @@ const DetailUkm = () => {
   const [hiddenSucces, sethiddenSucces] = useState(true);
   const [isAdmin, setisAdmin] = useState("");
   const [cantEdit, setcantEdit] = useState(true);
+  const [isEditing, setisEditing] = useState(false);
+  const [email, setemail] = useState("");
+  const [dataProfile, setdataProfile] = useState({
+    email: "",
+    nama: "",
+    nim: "",
+    prodi: "",
+    angkatan: "",
+    noTlp: "",
+  });
   const { id } = useParams();
 
   const handleSucces = () => {
@@ -28,6 +40,10 @@ const DetailUkm = () => {
     }, 1500);
   };
 
+  const handleEditing = () => {
+    setisEditing(!isEditing);
+  };
+
   const handleAdmin = () => {
     if (isAdmin === "admin") {
       setcantEdit(false);
@@ -36,62 +52,112 @@ const DetailUkm = () => {
     }
   };
 
+  const handleUploudSpreadSheet = () =>{
+    console.log(dataProfile)
+    UploudSpreadSheet(dataProfile, (res)=>{
+      if(!res){
+        console.log("Eror")
+      }else{
+        handleSucces()
+        console.log("Success")
+      }
+    })
+  }
+
+  const getDataMahasiswa = async () => {
+    getDataUser(email, (res) => {
+      if (!res) {
+        console.log("eror");
+      } else {
+        setdataProfile({
+          email: res.email,
+          nama: res.nama,
+          nim: res.nim,
+          prodi: res.prodi,
+          angkatan: res.angkatan,
+          noTlp: res.noTlp,
+        });
+      }
+    });
+  };
+
   useEffect(() => {
     if (id) {
-      const getData = DataUkm.find((item) => item.id === parseInt(id));
-      setdataUkm(getData);
+      const getDataUkm = DataUkm.find((item) => item.id === parseInt(id));
+      setdataUkm(getDataUkm);
     }
   }, [id]);
 
   useEffect(() => {
     setisAdmin(getRole(token));
+    setemail(getEmail(token));
     handleAdmin();
+    getDataMahasiswa();
   }, [isAdmin]);
 
-  console.log(isAdmin);
-  console.log(cantEdit);
+  console.log(email);
 
   return (
     <div className="flex flex-col lg:flex-row  bg-white">
-      <div className="lg:w-1/2 lg: p-5 relative">
-      <div hidden={cantEdit} className={``}>
-          <EditAdmin />
-          </div> 
+      <div className="lg:w-1/2 lg: p-5 relative ">
         <img
           src={dataUkm?.img}
           alt=""
           className=" w-full h-full lg:rounded-2xl"
         />
       </div>
-      <div className="lg:pt-10 lg:px-16 px-5 py-5 lg:w-1/2 bg-primary md:border-l-2 border-t-2 border-black relative">
+      <form className="lg:pt-10 lg:px-16 px-5 py-5 lg:w-1/2 bg-primary md:border-l-2 border-t-2 border-black relative">
+        <label
+          hidden={cantEdit}
+          htmlFor="imgUkm"
+          className={`${
+            isEditing ? " " : "hidden"
+          } px-5 py-2 bg-primary rounded-md border-2 border-dashed border-black cursor-pointer absolute lg:top-[22rem] lg:-left-[26rem] hover:scale-105 hover:shadow-xl`}
+        >
+          Choose File...
+        </label>
+        <input type="file" name="imgUkm" id="imgUkm" hidden={true} />
         <h1 className="md:text-4xl text-lg font-bold md:mb-5 mb-2 font-lexend">
           UKM {dataUkm?.name}
         </h1>
         <h2 className="md:text-2xl text-base font-semibold mb-3 font-lexend">
           Tentang Kami
         </h2>
-        <p className="text-justify lg:min-h-36 w-full md:text-lg md:mb-3 mb-2 relative">
-          <div hidden={cantEdit}>
-          <EditAdmin />
-          </div>
-          {dataUkm?.tentang}
-        </p>
+        <div className="text-justify w-full md:text-lg md:mb-3 mb-2 relative">
+          <TextareaAutoSize
+            value={dataUkm?.tentang}
+            className={`w-full bg-none resize-none outline-none ${
+              isEditing ? "bg-gray-200 p-3 rounded-xl" : "bg-transparent"
+            } `}
+            placeholder="Masukan Tentang UKM anda..."
+            minRows={4}
+            readOnly={!isEditing}
+          ></TextareaAutoSize>
+        </div>
         <h2 className="md:text-2xl font-semibold md:mb-3 font-lexend">
           Visi & Misi
         </h2>
-        <p className="text-justify md:text-lg lg:min-h-36 w-full relative">
-          <div hidden={cantEdit} className={` `}>
-          <EditAdmin />
-          </div>
-          {dataUkm?.visi}
-        </p>
+        <div className="text-justify md:text-lg  w-full relative">
+          <TextareaAutoSize
+            readOnly={!isEditing}
+            value={dataUkm?.visi}
+            minRows={4}
+            placeholder="Masukan Visi Misi UKM anda..."
+            className={`w-full bg-none resize-none outline-none ${
+              isEditing ? "bg-gray-200 p-3 rounded-xl" : "bg-transparent"
+            } `}
+          ></TextareaAutoSize>
+        </div>
         <div className="md:mb-40 mt-5 flex gap-5 mb-20">
-          <Button
-            className="bg-primary"
-            onClick={() => sethiddenConfirm(false)}
-          >
-            Daftar Sekarang
-          </Button>
+          <div hidden={!cantEdit}>
+            <Button
+              className="bg-primary"
+              onClick={() => sethiddenConfirm(false)}
+              type="button"
+            >
+              Daftar Sekarang
+            </Button>
+          </div>
           <Button
             onClick={() => sethidenProker(false)}
             type="button"
@@ -99,6 +165,20 @@ const DetailUkm = () => {
           >
             Lihat Proker
           </Button>
+          <div hidden={cantEdit}>
+            <div className="flex gap-5">
+              <Button
+                type="button"
+                onClick={handleEditing}
+                className="bg-primary"
+              >
+                {isEditing ? "Simpan" : "Edit"}
+              </Button>
+              <Button type="button" className="bg-primary">
+                Input Proker
+              </Button>
+            </div>
+          </div>
         </div>
         <img
           src={dataUkm?.bg1}
@@ -110,8 +190,7 @@ const DetailUkm = () => {
           alt="eror"
           className="absolute bottom-0 left-3 md:h-36 h-24"
         />
-      </div>
-
+      </form>
       <div
         className={`lg:h-[500px] w-screen fixed flex flex-col gap-3  items-center z-50 ${
           hidenProker ? "hidden" : ""
@@ -131,6 +210,7 @@ const DetailUkm = () => {
               </td>
               <td className="border-2 border-secondary lg:p-5">Waktu</td>
               <td className="border-2 border-secondary lg:p-5">Keterangan</td>
+              <td className="border-2 border-secondary lg:p-5">Action</td>
             </tr>
           </thead>
           <tbody>
@@ -153,7 +233,7 @@ const DetailUkm = () => {
       >
         <CardConfirm
           sethiddenConfirm={() => sethiddenConfirm(true)}
-          handleSucces={handleSucces}
+          handleSucces={handleUploudSpreadSheet}
         />
       </div>
       <div

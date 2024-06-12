@@ -2,25 +2,6 @@ import express from "express";
 import { db } from "../../database/connection.js";
 import { response } from "../components/response.js";
 
-import multer from "multer";
-
-let storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/img/");
-  },
-
-  filename: function (req, file, cb) {
-    let ext = file.originalname.substring(
-      file.originalname.lastIndexOf("."),
-      file.originalname.length
-    );
-    cb(null,Date.now() + ext)
-  },
-});
-
-export const upload = multer({
-  storage:storage
-}).single('file')
 
 export const profil = (req,res) => {
   const file = req.file.filename;

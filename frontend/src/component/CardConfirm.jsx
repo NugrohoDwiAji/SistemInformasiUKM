@@ -10,7 +10,7 @@ const CardConfirm = ({sethiddenConfirm, handleSucces}) => {
       </h1>
       <div className="flex gap-16">
       <Button className="bg-primary" type="button" onClick={sethiddenConfirm}>Kembali</Button>
-      <Button className="bg-secondary text-primary lg:w-[109.38px]" onClick={handleSucces} >Daftar</Button>
+      <Button className="bg-secondary text-primary lg:w-[109.38px]" onClick={handleSucces}>Daftar</Button>
       </div>
     </div>
   );
