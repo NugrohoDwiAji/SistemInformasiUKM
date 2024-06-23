@@ -20,7 +20,7 @@ export default function App() {
             <Route path='/' element={<LandingPage/>}/>
             <Route path='/minat' element={<MinatPage/>}/>
             <Route path='/about' element={<AboutPage/>}/>
-            <Route path='/detailUkm/:id' element={<DetailUkm/>}/>
+            <Route path='/detailUkm/:nama' element={<DetailUkm/>}/>
         </Routes>
         <Footer/>
     </Router>

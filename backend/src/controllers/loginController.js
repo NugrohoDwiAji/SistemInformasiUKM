@@ -1,8 +1,8 @@
 import { response } from "../components/response.js";
 import { db } from "../../database/connection.js";
 import jwt from 'jsonwebtoken'
-// import dotenv from "dotenv"
-// dotenv.config()
+import dotenv from "dotenv"
+dotenv.config()
 
 const login = (req, res) => {
   const { email , password } = req.body;
@@ -11,7 +11,6 @@ const login = (req, res) => {
     response(400, "data not found", "Priksa kembali input", res);
   } else {
     db.query(sql1, (err, result) => {
-        console.log(result)
       if (result.length===0) {
         response(400, "Login failed", "Priksa Kembali Email dan Password", res);
       }else{

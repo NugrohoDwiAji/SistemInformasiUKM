@@ -1,10 +1,12 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
+const host = import.meta.env.VITE_HOST;
+
 export const login = async (data, callback) => {
   try {
     await axios
-      .post("http://localhost:3000/login", data)
+      .post(`${host}/login`, data)
       .then((res) => {
         callback(true, res.data.datas);
       });
@@ -16,7 +18,7 @@ export const login = async (data, callback) => {
 export const UploudSpreadSheet = async (data, callback) => {
   try {
     await axios
-      .post("https://script.google.com/macros/s/AKfycbzvIi7KonwgdqMJF2tVl5qm9_d4Ti5ms-9U-w2UQT9d9sukt-rNcW9ow1m6Wadj235xDQ/exec", data)
+      .post("https://sheet.best/api/sheets/f5b56c0f-f3b5-4afd-85ac-274ff93ae0e5", data)
       .then((res) => {
         callback(res);
       });
@@ -27,7 +29,7 @@ export const UploudSpreadSheet = async (data, callback) => {
 
 export const getDataUser = async (data, callback)=>{
   try {
-    await axios.get(`http://localhost:3000/profil/${data}`).then((res)=> callback(res.data.datas[0]))
+    await axios.get(`${host}/profil/${data}`).then((res)=> callback(res.data.datas[0]))
   } catch (error) {
     console.log(error)
   }
@@ -35,7 +37,7 @@ export const getDataUser = async (data, callback)=>{
 
 export const updateProfil = async (data, callback) => {
   try {
-    await axios.put("http://localhost:3000/profil", data,{
+    await axios.put(`${host}/profil`, data,{
       headers:{
         "Content-Type":"multipart/form-data"
       }

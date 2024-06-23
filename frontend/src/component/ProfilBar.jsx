@@ -48,7 +48,7 @@ const ProfilBar = ({ profil, setprofil, setLogin }) => {
   const getData = async () => {
     getDataUser(email, (res) => {
       if (!res) {
-        console.log("eror");
+        console.log("Belum Login");
       } else {
         setdataProfile({
           email: res.email,

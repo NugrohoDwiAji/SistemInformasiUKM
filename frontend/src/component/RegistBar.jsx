@@ -10,7 +10,7 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { CgClose } from "react-icons/cg";
 import { MdOutlineErrorOutline } from "react-icons/md";
 import CardMsg from "./CardMsg";
-
+const host = import.meta.env.VITE_HOST;
 const RegistBar = (props) => {
   const { hidenRegist, sethidenRegist, handleOpenLogin } = props;
   const [nama, setnama] = useState("");
@@ -28,7 +28,7 @@ const RegistBar = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/signup", {
+      const response = await axios.post(`${host}/signup`, {
         nama,
         email,
         password,
