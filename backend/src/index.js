@@ -43,3 +43,5 @@ app.use(router)
 app.listen(port, ()=>{
     console.log(`Server Berjalan di http://localhost:${port}`)
 })
+
+export default app;
