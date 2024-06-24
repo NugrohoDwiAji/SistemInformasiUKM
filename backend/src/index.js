@@ -38,6 +38,7 @@ app.use(
 testConnection()
 
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.use(router)
 
 app.listen(port, ()=>{
