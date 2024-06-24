@@ -3,6 +3,7 @@ import { db } from "../../database/connection.js";
 import jwt from 'jsonwebtoken'
 import dotenv from "dotenv"
 dotenv.config()
+import bcrypt from 'bcrypt'
 
 const login = (req, res) => {
   const { email , password } = req.body;
@@ -10,20 +11,27 @@ const login = (req, res) => {
   if (!email || !password) {
     response(400, "data not found", "Priksa kembali input", res);
   } else {
-    db.query(sql1, (err, result) => {
-      if (result.length===0) {
+    db.query(sql1, (err, data) => {
+      if (data.length===0) {
         response(400, "Login failed", "Priksa Kembali Email dan Password", res);
       }else{
-        if(email === result[0].email && password === result[0].password){
-            req.session.result = result;
-            const nama = result[0].nama
-            const email = result[0].email
-            const role = result[0].role
-            const expiresIn= 60 * 60 * 1
-            const accessToken = jwt.sign({nama, email, role}, process.env.ACCESS_TOKEN_SECRET,{
-              expiresIn: expiresIn
-            })
-            response(200,accessToken,"berhasil login", res)
+        console.log(data)
+        if(email === data[0].email ){
+          bcrypt.compare(password,data[0].password, function(err, result){
+            if (result) {
+              req.session.result = data;
+              const nama = data[0].nama
+              const email = data[0].email
+              const role = data[0].role
+              const expiresIn= 60 * 1
+              const accessToken = jwt.sign({nama, email, role}, process.env.ACCESS_TOKEN_SECRET,{
+                expiresIn: expiresIn
+              })
+              response(200,accessToken,"berhasil login", res) 
+            } else {
+              response(400, err, "Masukan email dan password dengan benar", res)
+            }
+          })
         }else{
             response(400, "Invalid", "Masukan email dan password dengan benar", res)
         }
