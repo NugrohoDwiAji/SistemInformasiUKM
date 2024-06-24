@@ -119,172 +119,172 @@ const compare = () =>{
       hasil='PSM GEMA';
       break;
     case JSON.stringify([2,3,4]) :
-      hasil='oke2';
+      hasil='GALILEA atau KMK atau JAMAAH';
       break;
     case JSON.stringify([2,3,5]) :
-      hasil='oke2';
+      hasil='GALILEA atau KMK atau JAMAAH';
       break;
     case JSON.stringify([2,3,6]) :
-      hasil='oke';
+      hasil='GALILEA atau KMK atau JAMAAH';
       break;
     case JSON.stringify([2,3,7]) :
-      hasil='oke2';
+      hasil='GALILEA atau KMK atau JAMAAH';
       break;
     case JSON.stringify([2,3,8]) :
-      hasil='oke2';
+      hasil='GALILEA atau KMK atau JAMAAH';
       break;
     case JSON.stringify([2,3,9]) :
-      hasil='oke2';
+      hasil='GALILEA atau KMK atau JAMAAH';
       break;
     case JSON.stringify([2,4,5]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([2,4,6]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,4,7]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([2,4,8]) :
-      hasil='oke';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,4,9]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,5,6]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([2,5,7]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([2,5,8]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,5,9]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([2,6,7]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,6,8]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,6,9]) :
-      hasil='oke';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,7,8]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,7,9]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([2,8,9]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([3,4,5]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,4,6]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([3,4,7]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,4,8]) :
-      hasil='oke';
+      hasil='PENALA ';
       break;
     case JSON.stringify([3,4,9]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([3,5,6]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,5,7]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,5,8]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,5,9]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,6,7]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,6,8]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,6,9]) :
-      hasil='oke';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,7,8]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,7,9]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([3,8,9]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([4,5,6]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([4,5,7]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([4,5,8]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([4,5,9]) :
-      hasil='oke';
+      hasil='PENALA';
       break;
     case JSON.stringify([4,6,7]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([4,6,8]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([4,6,9]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([4,7,8]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([4,7,9]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([4,8,9]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([5,6,7]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([5,6,8]) :
-      hasil='oke';
+      hasil='PENALA';
       break;
     case JSON.stringify([5,6,9]) :
-      hasil='oke2';
+      hasil='PENALA';
       break;
     case JSON.stringify([5,7,8]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([5,7,9]) :
-      hasil='oke2';
+      hasil='MAPALISTA';
       break;
     case JSON.stringify([5,8,9]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([6,7,8]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([6,7,9]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([6,8,9]) :
-      hasil='oke';
+      hasil='PSM GEMA';
       break;
     case JSON.stringify([7,8,9]) :
-      hasil='oke2';
+      hasil='PSM GEMA';
       break;  
     default:
       hasil='INPUT INVALID pastikan anda memilih 3 pilihan...'
